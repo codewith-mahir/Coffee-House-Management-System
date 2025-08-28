@@ -1,12 +1,15 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "build": "tsc -p .",
-    "start": "node dist/index.js",
-    "test": "echo \"No tests yet\""
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"No tests yet\"",
+    "seed:admin": "node seed_admin.js",
+    "seed:menu": "node seed_menu.js",
+    "migrate:users": "node migrate-users.js",
+    "test:receipt": "node test-receipt.js"
   },
   "keywords": [],
   "author": "",
@@ -20,16 +23,6 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.0",
-    "zod": "^4.1.1"
-  },
-  "devDependencies": {
-    "@types/bcrypt": "^6.0.0",
-    "@types/cookie-parser": "^1.4.9",
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.3",
-    "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^24.3.0",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.2"
+    "nodemon": "^3.1.10"
   }
 }
